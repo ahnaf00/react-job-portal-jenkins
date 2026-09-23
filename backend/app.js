@@ -10,12 +10,22 @@ import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 
 const app = express();
-config({ path: "./config/config.env" });
+// config({ path: "./config/config.env" });
+
+// app.use(
+//   cors({
+//     origin: [process.env.FRONTEND_URL],
+//     method: ["GET", "POST", "DELETE", "PUT"],
+//     credentials: true,
+//   })
+// );
+
+config({ path: "./.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
-    method: ["GET", "POST", "DELETE", "PUT"],
+    origin: [process.env.FRONTEND_URL, "http://localhost:8081", "http://127.0.0.1:8081"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
