@@ -25,6 +25,10 @@ const Register = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
+// <<<<<<< HEAD
+// =======
+//         // "http://localhost:4000/api/v1/user/register",
+// >>>>>>> b4a4373 (Update API URLs to port 8082 and configure backend CORS)
         `${import.meta.env.VITE_API_URL}/user/register`,
         { name, phone, email, role, password },
         {
